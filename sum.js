@@ -23,9 +23,10 @@ function sum(numbers) {
         return console.log('NEEDS TO BE AT LEAST TWO NUMBERS.');
     }
 
-    // command-line numbers...
-
     // loop through numbers
+    for(const num of numbers) {
+        sum += num;
+    }
 
         // make sure it is a whole number (or output error)
 
@@ -34,8 +35,15 @@ function sum(numbers) {
     return sum;
 }
 
+// node sum 1 2 3
+// console.log(process.argv.splice(2));
+let numbers = process.argv.splice(2);
+numbers = numbers.map(function(number) { return Number(number); });
+// console.log(numbers);
+
 console.log(
-    sum([1]), // Show error
-    sum([1, 2, 3]) // 6
+    sum(numbers)
+    // sum([1]), // Show error
+    // sum([1, 2, 3]) // 6
 );
 
