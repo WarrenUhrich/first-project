@@ -25,13 +25,16 @@ function sum(numbers) {
 
     // loop through numbers
     for(const num of numbers) {
-        sum += num;
-    }
-
+        // If any argument is not a number, output an error
+        if(isNaN(num)) {
+            return console.log('NEEDS TO BE A NUMBER.');
+        }
         // make sure it is a whole number (or output error)
-
-        // add numbers to the sum total
-
+        if(num % 1 === 0) { // Skip decimal numbers
+            // add numbers to the sum total
+            sum += num;
+        }
+    }
     return sum;
 }
 
